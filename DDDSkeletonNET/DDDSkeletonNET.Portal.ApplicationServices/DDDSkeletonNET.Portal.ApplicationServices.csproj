@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4BB5299-26B7-4399-90C9-E105E7F666FA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DDDSkeletonNET.Portal.ApplicationServices</RootNamespace>
+    <AssemblyName>DDDSkeletonNET.Portal.ApplicationServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\ICustomerService.cs" />
+    <Compile Include="Messaging\Customers\CustomerPropertiesViewModel.cs" />
+    <Compile Include="Messaging\Customers\DeleteCustomerRequest.cs" />
+    <Compile Include="Messaging\Customers\DeleteCustomerResponse.cs" />
+    <Compile Include="Messaging\Customers\GetCustomerRequest.cs" />
+    <Compile Include="Messaging\Customers\GetCustomerResponse.cs" />
+    <Compile Include="Messaging\Customers\GetCustomersResponse.cs" />
+    <Compile Include="Messaging\Customers\InsertCustomerRequest.cs" />
+    <Compile Include="Messaging\Customers\InsertCustomerResponse.cs" />
+    <Compile Include="Messaging\Customers\UpdateCustomerRequest.cs" />
+    <Compile Include="Messaging\Customers\UpdateCustomerResponse.cs" />
+    <Compile Include="Messaging\IntegerIdRequest.cs" />
+    <Compile Include="Messaging\ServiceRequestBase.cs" />
+    <Compile Include="Messaging\ServiceResponseBase.cs" />
+    <Compile Include="ModelConversions\ConversionHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CustomerViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDDSkeleton.Portal.Domain\DDDSkeleton.Portal.Domain.csproj">
+      <Project>{db2149dd-558b-49dc-b0dd-0637dbe57db8}</Project>
+      <Name>DDDSkeleton.Portal.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DDDSkeletonNET.Infrastructure.Common\DDDSkeletonNET.Infrastructure.Common.csproj">
+      <Project>{6618c7bc-9929-46f1-9783-29639aa44f2e}</Project>
+      <Name>DDDSkeletonNET.Infrastructure.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

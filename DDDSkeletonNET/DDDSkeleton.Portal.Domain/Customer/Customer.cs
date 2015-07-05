@@ -10,6 +10,7 @@ namespace DDDSkeleton.Portal.Domain.Customer
 {
     public class Customer : EntityBase<int>, IAggregateRoot
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public Address CustomerAddress { get; set; }
 
