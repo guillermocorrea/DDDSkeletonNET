@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DB2149DD-558B-49DC-B0DD-0637DBE57DB8}</ProjectGuid>
+    <ProjectGuid>{FCE60121-B89C-4F3A-B3E5-776FB1DCD4BE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DDDSkeleton.Portal.Domain</RootNamespace>
-    <AssemblyName>DDDSkeleton.Portal.Domain</AssemblyName>
+    <RootNamespace>DDDSkeletonNET.Portal.Repository.Memory</RootNamespace>
+    <AssemblyName>DDDSkeletonNET.Portal.Repository.Memory</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,37 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customer\Customer.cs" />
-    <Compile Include="Customer\CustomerBusinessRule.cs" />
-    <Compile Include="Customer\CustomerBusinessRuleMessages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerBusinessRuleMessages.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Customer\ICustomerRepository.cs" />
+    <Compile Include="Database\DatabaseCustomer.cs" />
+    <Compile Include="Database\InMemoryDatabaseObjectContext.cs" />
+    <Compile Include="Database\IObjectContextFactory.cs" />
+    <Compile Include="Database\LazySingletonObjectContextFactory.cs" />
+    <Compile Include="InMemoryUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValueObjects\Address.cs" />
-    <Compile Include="ValueObjects\ValueObjectsBusinessRuleMessages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ValueObjectsBusinessRuleMessages.resx</DependentUpon>
-    </Compile>
+    <Compile Include="Repositories\CustomerRepository.cs" />
+    <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DDDSkeleton.Portal.Domain\DDDSkeleton.Portal.Domain.csproj">
+      <Project>{db2149dd-558b-49dc-b0dd-0637dbe57db8}</Project>
+      <Name>DDDSkeleton.Portal.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DDDSkeletonNET.Infrastructure.Common\DDDSkeletonNET.Infrastructure.Common.csproj">
       <Project>{6618c7bc-9929-46f1-9783-29639aa44f2e}</Project>
       <Name>DDDSkeletonNET.Infrastructure.Common</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Customer\CustomerBusinessRuleMessages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>CustomerBusinessRuleMessages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ValueObjects\ValueObjectsBusinessRuleMessages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ValueObjectsBusinessRuleMessages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
