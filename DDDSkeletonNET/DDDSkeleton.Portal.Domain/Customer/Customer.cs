@@ -1,4 +1,5 @@
-﻿using DDDSkeletonNET.Infrastructure.Common.Domain;
+﻿using DDDSkeleton.Portal.Domain.ValueObjects;
+using DDDSkeletonNET.Infrastructure.Common.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,17 @@ namespace DDDSkeleton.Portal.Domain.Customer
 {
     public class Customer : EntityBase<int>
     {
+        public string Name { get; set; }
+        public Address CustomerAddress { get; set; }
+
         protected override void Validate()
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(Name))
+            {
+                AddBrokenRule(new BusinessRule(CustomerBusinessRuleMessages.CustomerNameRequired));
+            }
+
+            CustomerAddress.ThrowExceptionIfInvalid();
         }
     }
 }

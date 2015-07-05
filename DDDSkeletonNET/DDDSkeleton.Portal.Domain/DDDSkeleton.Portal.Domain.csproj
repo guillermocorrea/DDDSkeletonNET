@@ -40,13 +40,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer\Customer.cs" />
+    <Compile Include="Customer\CustomerBusinessRule.cs" />
+    <Compile Include="Customer\CustomerBusinessRuleMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerBusinessRuleMessages.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValueObjects\Address.cs" />
+    <Compile Include="ValueObjects\ValueObjectsBusinessRuleMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValueObjectsBusinessRuleMessages.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DDDSkeletonNET.Infrastructure.Common\DDDSkeletonNET.Infrastructure.Common.csproj">
       <Project>{6618c7bc-9929-46f1-9783-29639aa44f2e}</Project>
       <Name>DDDSkeletonNET.Infrastructure.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Customer\CustomerBusinessRuleMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CustomerBusinessRuleMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValueObjects\ValueObjectsBusinessRuleMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValueObjectsBusinessRuleMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
