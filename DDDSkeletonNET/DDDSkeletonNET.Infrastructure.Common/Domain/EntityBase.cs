@@ -4,13 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DDDSkeletonNET.Infrastructure.Common
+namespace DDDSkeletonNET.Infrastructure.Common.Domain
 {
     public abstract class EntityBase<IdType>
     {
+        private ICollection<BusinessRule> _brokenRules = new List<BusinessRule>();
+
         public IdType Id { get; set; }
 
         protected abstract void Validate();
+
+        protected void AddBrokenRule(BusinessRule businessRule)
+        {
+            _brokenRules.Add(businessRule);
+        }
+
+        public IEnumerable<BusinessRule> GetBrokenRules()
+        {
+            _brokenRules.Clear();
+            Validate();
+            return _brokenRules;
+        }
 
         public override bool Equals(object entity)
         {
