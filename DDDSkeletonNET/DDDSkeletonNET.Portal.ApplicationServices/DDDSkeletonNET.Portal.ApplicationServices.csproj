@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementations\CustomerService.cs" />
+    <Compile Include="Implementations\ResourceNotFoundException.cs" />
     <Compile Include="Interfaces\ICustomerService.cs" />
     <Compile Include="Messaging\Customers\CustomerPropertiesViewModel.cs" />
     <Compile Include="Messaging\Customers\DeleteCustomerRequest.cs" />
