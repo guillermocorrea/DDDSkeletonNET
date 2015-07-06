@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDSkeletonNET.Portal.Repos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDSkeletonNET.Portal.ApplicationServices", "DDDSkeletonNET.Portal.ApplicationServices\DDDSkeletonNET.Portal.ApplicationServices.csproj", "{B4BB5299-26B7-4399-90C9-E105E7F666FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDSkeletonNET.Portal.WebService", "DDDSkeletonNET.Portal.WebService\DDDSkeletonNET.Portal.WebService.csproj", "{CF50435A-D849-42D8-AE26-2C1CFEF626EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{B4BB5299-26B7-4399-90C9-E105E7F666FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4BB5299-26B7-4399-90C9-E105E7F666FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4BB5299-26B7-4399-90C9-E105E7F666FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF50435A-D849-42D8-AE26-2C1CFEF626EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF50435A-D849-42D8-AE26-2C1CFEF626EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF50435A-D849-42D8-AE26-2C1CFEF626EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF50435A-D849-42D8-AE26-2C1CFEF626EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,5 +52,6 @@ Global
 		{DB2149DD-558B-49DC-B0DD-0637DBE57DB8} = {D1DCBE27-6C95-403D-9D7E-3665113F8529}
 		{FCE60121-B89C-4F3A-B3E5-776FB1DCD4BE} = {D1DCBE27-6C95-403D-9D7E-3665113F8529}
 		{B4BB5299-26B7-4399-90C9-E105E7F666FA} = {D1DCBE27-6C95-403D-9D7E-3665113F8529}
+		{CF50435A-D849-42D8-AE26-2C1CFEF626EA} = {D1DCBE27-6C95-403D-9D7E-3665113F8529}
 	EndGlobalSection
 EndGlobal
